@@ -1,3 +1,6 @@
+// Version: v1.0.0 - Project: Shopping App
+// Task: SCRUM-1 - Connecting Jira with GitHub
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +16,8 @@ void main() async {
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
+      systemNavigationBarColor: Color(0xFF121212), // جعل لون شريط التنقل السفلي داكناً ومتناسقاً
+      systemNavigationBarIconBrightness: Brightness.light,
     ),
   );
   runApp(const MyApp());
@@ -25,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) {
+        ChangeChangeNotifierProvider(create: (_) {
           final provider = ProductsProvider();
           provider.loadSavedFavorites();
           return provider;
